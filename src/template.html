@@ -8,5 +8,30 @@
 </head>
 <body>
     <video id="stream" autoplay playsinline controls="false"></video>
+    <canvas id="target"></canvas>
+    <script src="./seriously.js"></script>
+    <script src="./seriously.blur.js"></script>
+    <!-- seriously effects -->
+    <script>
+        var seriously,
+            video,
+            target,
+            blurr
+        
+        seriously = new Seriously()
+
+        video = seriously.source('#stream')
+
+        target = seriously.target('#target')
+
+        blurr = seriously.effect('blur')
+
+        blurr.source = video
+        
+        target.source = blurr
+
+        seriously.go()
+
+    </script>
 </body>
 </html>

@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("// get video\r\nconst video = document.getElementById('stream')\r\n\r\nconsole.log(video)\n\n//# sourceURL=webpack://webrtc_practice/./src/index.js?");
+eval("// get video\r\nconst video = document.querySelector('video')\r\n\r\n// play video\r\nconst playMedia = async () => {\r\n    try {\r\n        const constraints = {'video': true, 'audio': true}\r\n        const stream = await navigator.mediaDevices.getUserMedia(constraints)\r\n        console.log(video)\r\n        video.srcObject = stream\r\n    } catch(err) {\r\n        console.log(err)\r\n    }\r\n}\r\n\r\nplayMedia()\n\n//# sourceURL=webpack://webrtc_practice/./src/index.js?");
 
 /***/ })
 
